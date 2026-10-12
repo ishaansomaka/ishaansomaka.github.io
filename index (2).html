@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ishaan Somaka</title>
+<meta name="description" content="Ishaan Somaka is a high school student in Georgia researching housing pressure, incentives, and policy in the Atlanta region, and building tools that make the data usable.">
+<meta name="theme-color" content="#F8F6F1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ishaan Somaka">
+<meta property="og:description" content="Research and tools on housing pressure, incentives, and policy in the Atlanta region.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232B3F5E'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23F8F6F1'%3EIS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Concept: a quiet research notebook. One reading column, small-caps labels, notes in the margin, hairline rules, no cards. */
+:root {
+  --bg: #F8F6F1;
+  --ink: #24272C;
+  --muted: #5C5F66;
+  --rule: #D8D3C6;
+  --navy: #2B3F5E;
+  --pine: #3E5C4B;
+  --soft: #A9B4C2;
+  --loss: #9B3A2C;
+  --ph-fill: #EFEBE1;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14181D; --ink: #E6E3DC; --muted: #A3A8AF; --rule: #2D343C;
+    --navy: #A9BEDF; --pine: #93BBA2; --soft: #4A5A70; --loss: #E39A8A; --ph-fill: #1B2128;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14181D; --ink: #E6E3DC; --muted: #A3A8AF; --rule: #2D343C;
+  --navy: #A9BEDF; --pine: #93BBA2; --soft: #4A5A70; --loss: #E39A8A; --ph-fill: #1B2128;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--sans); font-size: 17px; line-height: 1.65;
+  padding-inline: 20px; padding-block: 0 40px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1060px; margin-inline: auto; }
+p { margin: 0; max-width: 62ch; }
+a { color: var(--navy); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible, video:focus-visible { outline: 2px solid var(--pine); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+h4 { margin: 0; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.label { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 20; }
+.skip:focus { left: 8px; }
+
+/* header */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--rule); margin-inline: -20px; padding-inline: 20px; }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 56px; gap: 16px; }
+.brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+.nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+.nav a { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; padding-block: 8px; border-bottom: 1px solid transparent; }
+.nav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.menu-btn { display: none; font: inherit; font-size: 14px; font-weight: 500; background: none; border: 1px solid var(--rule); color: var(--ink); padding: 8px 14px; cursor: pointer; }
+
+/* home */
+.home { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 56px; padding-block: 88px 96px; align-items: end; }
+.home h1 { font-size: clamp(3.2rem, 9vw, 6.2rem); line-height: 0.98; letter-spacing: -0.025em; margin-block: 18px 28px; }
+.lede { font-family: var(--serif); font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.4; max-width: 30em; }
+.lede em { color: var(--navy); }
+.by { margin-top: 18px; color: var(--muted); font-size: 15px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn { display: inline-block; font-size: 15px; font-weight: 500; text-decoration: none; padding: 11px 20px; border: 1px solid var(--ink); color: var(--ink); background: transparent; }
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn.fill { background: var(--navy); border-color: var(--navy); color: var(--bg); }
+.btn.fill:hover { background: var(--ink); border-color: var(--ink); }
+.contact-line { margin-top: 28px; font-size: 16px; }
+.portrait { border: 1px solid var(--rule); width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; background: var(--ph-fill); }
+
+/* sections */
+.sec { border-top: 1px solid var(--rule); padding-block: 88px; scroll-margin-top: 56px; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-bottom: 48px; }
+.sec h2 { font-size: clamp(2.2rem, 5vw, 3.3rem); line-height: 1.05; letter-spacing: -0.015em; }
+.sec-head p { color: var(--muted); }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 64px; }
+.cols > * { min-width: 0; }
+.stack { display: flex; flex-direction: column; gap: 24px; }
+.stack.wide { gap: 40px; }
+.note { font-size: 15px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; align-self: start; }
+.note dl { margin: 0; display: grid; gap: 14px; }
+.note dt { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.note dd { margin: 2px 0 0; color: var(--ink); }
+.callout { border-left: 3px solid var(--pine); padding-left: 14px; font-size: 16px; color: var(--muted); max-width: 62ch; }
+.qs { list-style: none; margin: 0; padding: 0; display: grid; max-width: 62ch; }
+.qs li { font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; padding-block: 14px; border-top: 1px solid var(--rule); }
+.qs li:last-child { border-bottom: 1px solid var(--rule); }
+
+/* research */
+.status { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pine); }
+.project h3 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); line-height: 1.15; max-width: 22em; }
+.blk { display: grid; gap: 10px; }
+.finds { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-width: 62ch; }
+.finds li { padding-block: 14px; border-top: 1px solid var(--rule); }
+.finds li:last-child { border-bottom: 1px solid var(--rule); }
+.finds strong { font-weight: 600; }
+.src { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+.recs { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; max-width: 62ch; }
+figure { margin: 0; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; max-width: 56ch; }
+.chart svg { display: block; width: 100%; max-width: 520px; height: auto; }
+.c-text { font-family: var(--sans); font-size: 12px; fill: var(--ink); }
+.c-muted { font-family: var(--sans); font-size: 11px; fill: var(--muted); }
+.c-axis { stroke: var(--muted); stroke-width: 1; }
+.scroll-x { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 15px; }
+th, td { text-align: left; padding: 8px 12px 8px 0; border-top: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border-top: 0; border-bottom: 1px solid var(--ink); }
+
+/* toolkit */
+.tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.tool-grid > * { min-width: 0; }
+.plain { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; max-width: 62ch; }
+.guide { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 760px; }
+.guide img { border: 1px solid var(--rule); width: 100%; }
+
+/* articles */
+.arts { list-style: none; margin: 0; padding: 0; display: grid; max-width: 70ch; }
+.arts li { padding-block: 18px; border-top: 1px solid var(--rule); display: grid; gap: 4px; }
+.arts li:last-child { border-bottom: 1px solid var(--rule); }
+.arts .src { margin-top: 0; }
+.arts a { font-family: var(--serif); font-size: 1.25rem; line-height: 1.3; }
+.bookfig img { max-width: 200px; width: 100%; border: 1px solid var(--rule); }
+.book { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 48px; }
+.book img { width: 100%; border: 1px solid var(--rule); }
+.book .text { display: grid; gap: 10px; max-width: 56ch; }
+@media (max-width: 600px) { .book { grid-template-columns: minmax(0, 1fr); } .book img { max-width: 200px; } }
+
+/* in the field */
+.entry { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; padding-block: 48px; border-top: 1px solid var(--rule); align-items: start; }
+.entry:first-of-type { border-top: 0; padding-top: 0; }
+.entry > * { min-width: 0; }
+.entry h3 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; margin-block: 8px 14px; }
+.entry .text { display: flex; flex-direction: column; gap: 14px; }
+.entry .text p { font-size: 16px; }
+.pics { display: grid; gap: 20px; }
+.pics.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pics img { width: 100%; border: 1px solid var(--rule); background: var(--ph-fill); }
+.entry.wide { grid-template-columns: minmax(0, 1fr); }
+.entry.wide .text { max-width: 62ch; }
+video { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 832 / 384; background: #000; border: 1px solid var(--rule); }
+.pics.three { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.pics.two { align-items: start; }
+.pics .span { grid-column: 1 / -1; }
+
+/* contact */
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; max-width: 560px; }
+.contact-list li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--rule); overflow-wrap: anywhere; }
+.contact-list li:last-child { border-bottom: 1px solid var(--rule); }
+footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .home { grid-template-columns: minmax(0, 1fr); padding-block: 56px 64px; gap: 40px; }
+  .portrait { max-width: 380px; order: -1; }
+  .cols { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .cols .note { order: -1; }
+  .sec { padding-block: 64px; }
+  .tool-grid { grid-template-columns: minmax(0, 1fr); }
+  .entry { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 36px; }
+}
+@media (max-width: 720px) {
+  .menu-btn { display: block; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 8px 20px 16px; display: none; }
+  .nav.open { display: block; }
+  .nav ul { flex-direction: column; gap: 0; }
+  .nav a { display: block; padding-block: 12px; border-bottom: 1px solid var(--rule); }
+  .contact-list li { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (max-width: 720px) {
+  .pics.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .guide, .pics.two, .pics.three { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">Ishaan Somaka</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#field">Involvements</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <section class="home" id="top" aria-label="Introduction">
+    <div>
+      <p class="label">Economics, data, and policy</p>
+      <h1>Ishaan Somaka</h1>
+      <p class="lede">Hello, I'm a student at Lambert High School interested in economics, urban development, housing policy, and data analysis.</p>
+      <p class="by">National Economics Challenge Champion &middot; Eagle Scout &middot; Housing Advocate</p>
+      <div class="actions">
+        <a class="btn fill" href="#research">Read the research</a>
+        <a class="btn" href="#toolkit">See the toolkit</a>
+        <a class="btn" href="#about">About me</a>
+        <a class="btn" href="#field">Involvements</a>
+      </div>
+      <p class="contact-line">Contact me at <a href="mailto:ivsomaka@gmail.com">ivsomaka@gmail.com</a> or on <a href="https://www.linkedin.com/in/ishaan-somaka" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </div>
+    <img class="portrait" src="assets/arc-presentation.jpg" width="1057" height="1400" alt="Ishaan Somaka speaking at a wooden podium marked with the ARC logo, wearing a navy suit and yellow tie">
+  </section>
+
+  <section class="sec" id="about">
+    <div class="sec-head">
+      <p class="label">About</p>
+      <h2>Questions I keep coming back to</h2>
+    </div>
+    <div>
+      <div class="stack wide">
+        <ul class="qs">
+          <li>What changes when the incentives change?</li>
+          <li>Who pays when a neighborhood changes?</li>
+          <li>How do people decide about money when they only have part of the picture?</li>
+          <li>What would make a hard dataset useful to someone who is not an analyst?</li>
+        </ul>
+        <div class="stack">
+          <p>I am most interested in decisions that look simple from the outside and turn out to depend on incentives: why a family moves, how a block changes, what a household does with its savings, what a policy actually rewards.</p>
+          <p>Economics gives me a way to think about those questions, and data analysis gives me a way to check my thinking. Finance and public policy are where the ideas meet real choices with real costs. I like projects that end in something people can use, not only a conclusion.</p>
+          <p>These fields overlap more than their names suggest, so I treat them as one set of questions, not separate career paths.</p>
+        </div>
+        <div class="stack">
+          <h4>Away from the screen</h4>
+          <p>Hiking, backpacking, and national parks are how I spend time off. I also run: four years of varsity track and field (long distance) and three years of varsity cross country. After a long career, I would like to work as a National Park Ranger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="research">
+    <div class="sec-head">
+      <p class="label">Research</p>
+      <h2>Housing pressure in the Atlanta region</h2>
+      <p>Each project carries a status line so it is clear what is finished and what is still underway.</p>
+    </div>
+    <article class="project cols">
+      <div class="stack wide">
+        <div class="stack">
+          <span class="status">Independent research &middot; Ongoing &middot; Paper dated September 2026</span>
+          <h3>Reclaiming Urban Belonging: Policy Interventions to Reverse Gentrification in Atlanta</h3>
+        </div>
+
+        <div class="blk">
+          <h4>The question</h4>
+          <p>Where is gentrification pushing residents out in the Atlanta region, and which policy tools can reduce it in a state that does not allow rent control?</p>
+        </div>
+
+        <div class="blk">
+          <h4>Why it matters</h4>
+          <p>Gentrification in Atlanta follows public decisions about where to build trails, transit, and roads, and it moves faster than current policy can respond. The earlier a community acts, the less it costs to keep a home affordable.</p>
+        </div>
+
+        <div class="blk">
+          <h4>Data and methods</h4>
+          <p>The paper combines three kinds of evidence: public housing and development data, interviews with local officials and housing organizations, and case studies of three cities that used different tools against displacement: Burlington, Vermont (community land trusts), Washington, D.C. (tenant purchase rights), and Minneapolis (zoning reform).</p>
+          <p>My first phase assembled eleven datasets across six counties. Those files were lost, so in fall 2026 I rebuilt the analysis with the public datasets below, covering the 11-county region of the Atlanta Regional Commission (ARC), with a closer look at Forsyth County. The plan is to map each measure by census tract, find tracts where several pressures overlap, and test those overlaps against ARC's record of which tracts actually changed between 2000 and 2019.</p>
+          <div class="scroll-x">
+            <table>
+              <thead><tr><th scope="col">Measure</th><th scope="col">Source</th></tr></thead>
+              <tbody>
+                <tr><td>Median home value</td><td>American Community Survey, via ARC</td></tr>
+                <tr><td>Median gross rent</td><td>American Community Survey, 2020 to 2024, via ARC</td></tr>
+                <tr><td>Rent burden (30%+ of income)</td><td>American Community Survey, via ARC</td></tr>
+                <tr><td>Renter-occupied share</td><td>American Community Survey, via ARC</td></tr>
+                <tr><td>Median household income</td><td>American Community Survey, via ARC</td></tr>
+                <tr><td>Residential building permits</td><td>ARC population and permit estimates</td></tr>
+                <tr><td>Eviction filing rate</td><td>ARC Metro Atlanta Eviction Tracker, with Eviction Lab</td></tr>
+                <tr><td>Transit proximity</td><td>ARC and MARTA transit data</td></tr>
+                <tr><td>Neighborhood change, 2000 to 2019</td><td>ARC Regional Snapshot (2021)</td></tr>
+                <tr><td>Forecast household growth to 2035</td><td>ARC Series 17 forecasts, compiled by HR&amp;A Advisors</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="blk">
+          <h4>What I found</h4>
+          <ul class="finds">
+            <li><strong>Prices move at the announcement.</strong> Homes within a half-mile of the BeltLine rose 17.9% to 26.6% more in value than comparable homes between 2011 and 2015, and earlier research shows premiums appearing years before the trails were built.<span class="src">Immergluck and Balan (2018); Immergluck (2009)</span></li>
+            <li><strong>Policy has not kept pace.</strong> By spring 2022, Atlanta's inclusionary zoning had produced 138 completed affordable units, with 646 more underway or planned, while the city loses more than 1,500 affordable units a year.<span class="src">Atlanta Civic Circle (2022)</span></li>
+            <li><strong>The pressure moves outward.</strong> ARC forecasts about 350,000 new households across its 11 counties by 2035, including about 42,000 in Forsyth County, the third-largest increase. Under current forecasts, 80% of new households would face commutes over 30 minutes to new jobs, up from 75% today.<span class="src">ARC and HR&amp;A Advisors (2026)</span></li>
+            <li><strong>Georgia limits the toolbox.</strong> State law bars local governments from regulating rent on private property, so protection has to come through land, zoning, and development agreements.<span class="src">O.C.G.A. 44-7-19</span></li>
+            <li><strong>The interviews changed the question.</strong> Talking with officials and housing organizations moved my focus from where displacement happens to what changes the incentives behind it.</li>
+          </ul>
+          <figure class="chart">
+            <svg viewBox="0 0 480 170" role="img" aria-labelledby="c1t c1d">
+              <title id="c1t">Affordable units from inclusionary zoning compared with units lost in one year</title>
+              <desc id="c1d">Atlanta's inclusionary zoning program produced 784 units between January 2018 and April 2022, of which 138 were completed. The city loses more than 1,500 affordable units in one year.</desc>
+              <text class="c-text" x="0" y="14">Inclusionary zoning, Jan. 2018 to Apr. 2022</text>
+              <rect x="0" y="22" width="27.6" height="28" fill="var(--navy)"/>
+              <rect x="27.6" y="22" width="129.2" height="28" fill="var(--soft)"/>
+              <text class="c-text" x="166" y="41">784 units (138 completed)</text>
+              <text class="c-text" x="0" y="82">Affordable units lost in one year, citywide</text>
+              <rect x="0" y="90" width="300" height="28" fill="var(--loss)"/>
+              <text class="c-text" x="310" y="109">1,500+ units</text>
+              <line class="c-axis" x1="0" y1="130" x2="360" y2="130"/>
+              <line class="c-axis" x1="0" y1="130" x2="0" y2="135"/>
+              <line class="c-axis" x1="120" y1="130" x2="120" y2="135"/>
+              <line class="c-axis" x1="240" y1="130" x2="240" y2="135"/>
+              <line class="c-axis" x1="360" y1="130" x2="360" y2="135"/>
+              <text class="c-muted" x="0" y="149" text-anchor="start">0</text>
+              <text class="c-muted" x="120" y="149" text-anchor="middle">600</text>
+              <text class="c-muted" x="240" y="149" text-anchor="middle">1,200</text>
+              <text class="c-muted" x="360" y="149" text-anchor="middle">1,800</text>
+              <text class="c-muted" x="0" y="164">Housing units</text>
+            </svg>
+            <figcaption>Drawn to scale from Atlanta Civic Circle (2022). Dark blue is completed units, grey is units under construction or in development.</figcaption>
+          </figure>
+          <p class="callout">These findings combine published research, ARC data, and my own interviews. The county-level results from my first phase were lost, so the paper reports the rebuilt framework. Forecasts are forecasts, and the BeltLine research shows an association with price increases, not a full account of every cause.</p>
+        </div>
+
+        <div class="blk">
+          <h4>What I recommend</h4>
+          <ol class="recs">
+            <li>Act at the announcement of a major trail, transit line, or interchange, before prices move.</li>
+            <li>Scale community land trusts on public land.</li>
+            <li>Extend inclusionary requirements to where public investment is going.</li>
+            <li>Allow more homes near jobs and transit.</li>
+            <li>Build an early warning system that combines data with resident input. This is the purpose of the toolkit below.</li>
+            <li>Study a tenant right of first refusal, which would require new legislation in Georgia.</li>
+          </ol>
+        </div>
+
+        <div class="blk">
+          <h4>My role</h4>
+          <p>I carried out the research on my own: assembling and rebuilding the data, interviewing district commissioners and people from HouseATL, the Atlanta Land Trust, and other housing nonprofits, comparing three other cities, and writing the paper. I then built the toolkit so the work is usable by residents.</p>
+        </div>
+
+        <div class="blk">
+          <h4>Materials</h4>
+          <p><a href="assets/Reclaiming-Urban-Belonging.pdf" target="_blank" rel="noopener">Read the paper (PDF, 21 pages)</a></p>
+          <p><a href="#toolkit">Atlanta Region Housing Pressure Toolkit and community guide</a></p>
+        </div>
+      </div>
+      <aside class="note" aria-label="Project details">
+        <dl>
+          <div><dt>Status</dt><dd>Independent research, ongoing</dd></div>
+          <div><dt>Paper</dt><dd>21 pages, September 2026</dd></div>
+          <div><dt>Region</dt><dd>ARC's 11-county Atlanta region, with a closer look at Forsyth County</dd></div>
+          <div><dt>Data</dt><dd>Ten public measures, rebuilt in fall 2026</dd></div>
+          <div><dt>Also</dt><dd>Interviews and three city case studies</dd></div>
+          <div><dt>Thanks</dt><dd>Forsyth County Commissioner Alfred John, HouseATL, Atlanta Land Trust, Initiative for Affordable Housing, Affordable Housing Solutions, and Star-C. Faculty in the economics departments at Cornell, NYU, and Georgia State. Professors at the London School of Economics.</dd></div>
+        </dl>
+      </aside>
+    </article>
+  </section>
+
+  <section class="sec" id="toolkit">
+    <div class="sec-head">
+      <p class="label">Toolkit</p>
+      <h2>Atlanta Region Housing Pressure Toolkit</h2>
+      <p>Research asks a question. A tool lets other people use the answer. This is the tool: a website and a printable community guide.</p>
+    </div>
+    <div class="stack wide">
+      <figure>
+        <div class="guide">
+          <img src="assets/guide-page-1.jpg" width="765" height="990" loading="lazy" alt="First page of the Housing Pressure Toolkit community guide, with a checklist of warning signs of neighborhood change">
+          <img src="assets/guide-page-2.jpg" width="765" height="990" loading="lazy" alt="Second page of the community guide, explaining the housing measures and what the regional data shows">
+        </div>
+        <figcaption>Pages 1 and 2 of the printable community guide. The full guide is five pages in English with a complete Spanish version. General information, not legal advice.</figcaption>
+      </figure>
+      <div class="tool-grid">
+        <div class="blk">
+          <h4>The problem</h4>
+          <p>Rising rents and new development can push long-time residents out of their neighborhoods, often before anyone notices. The data that shows it is scattered and written for analysts, and residents often do not know their rights or where to find help.</p>
+        </div>
+        <div class="blk">
+          <h4>Who it is for</h4>
+          <p>Residents, community organizations, and local officials. I have presented it at town halls and to Forsyth County Commissioner Alfred John.</p>
+        </div>
+        <div class="blk">
+          <h4>The website</h4>
+          <ul class="plain">
+            <li>Covers Atlanta's 11-county region</li>
+            <li>Maps 14 housing and economic indicators</li>
+            <li>Flags early signs of displacement risk</li>
+            <li>Compares long-term trends and projected growth</li>
+            <li>Lets residents report neighborhood changes without names or personal information</li>
+            <li>Works in English and Spanish</li>
+          </ul>
+        </div>
+        <div class="blk">
+          <h4>The community guide</h4>
+          <ul class="plain">
+            <li>A checklist of warning signs</li>
+            <li>What the housing numbers mean</li>
+            <li>Renters' rights in Georgia</li>
+            <li>Tools for homeowners</li>
+            <li>Free legal help and Atlanta housing nonprofits</li>
+          </ul>
+        </div>
+      </div>
+      <p class="callout">What the data shows across the 11 counties: from 2010 to 2024, the share of all households under cost strain fell from 39.1% to 33.8%, while the share of renters under cost strain rose from 51.5% to 55.0%. After inflation, median household income fell in 5 of the 11 counties. Source: U.S. Census Bureau data compiled by the Atlanta Regional Commission.</p>
+      <div class="actions" style="margin-top:0">
+        <a class="btn fill" href="https://ishaansomaka.github.io/housing-toolkit" target="_blank" rel="noopener">Open the live toolkit</a>
+        <a class="btn" href="assets/Housing-Pressure-Toolkit-Community-Guide.pdf" target="_blank" rel="noopener">Read the community guide (PDF)</a>
+        <a class="btn" href="https://github.com/ishaansomaka/housing-toolkit" target="_blank" rel="noopener">View the source on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="field">
+    <div class="sec-head">
+      <p class="label">More about me</p>
+      <h2>Involvements</h2>
+      <p>Competitions, public service, and leadership.</p>
+    </div>
+
+    <div class="entry wide">
+      <div class="text">
+        <p class="label">Economics competition</p>
+        <h3>United States National Economics Team</h3>
+        <p>In 2026 my team won the National Economics Challenge Adam Smith Division. I co-captained the four-person team, which finished first among more than 10,000 competitors. In 2025 we took Global First Place at the World Economics Cup. Our team has also won multiple Georgia state titles, including the 2026 Personal Finance Challenge. The win led to an invitation to represent the U.S. at the Future Economics Leadership Summit Asia in Hong Kong.</p>
+      </div>
+      <div class="pics two">
+        <figure>
+          <video controls preload="metadata" poster="assets/nec-win-poster.jpg" aria-label="Video of our team winning the 2026 National Economics Challenge">
+            <source src="assets/nec-win.mp4" type="video/mp4">
+            Your browser cannot play this video. <a href="assets/nec-win.mp4">Download it here</a>.
+          </video>
+          <figcaption>Our team winning the National Economics Challenge.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/11alive-coverage.jpg" width="1400" height="647" loading="lazy" alt="Four students holding a trophy on a local news broadcast headlined Local high school students win 2026 National Economics Challenge">
+          <figcaption>11Alive coverage of the 2026 win.</figcaption>
+        </figure>
+      </div>
+      <div class="pics three">
+        <figure>
+          <img src="assets/wec-2025.jpg" width="415" height="518" loading="lazy" alt="World Economics Cup 2025 card: Global First Place, Lambert High School, United States, with a title slide and video call of the team">
+          <figcaption>Global First Place, World Economics Cup 2025.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/finance-challenge-2026.jpg" width="1170" height="1220" loading="lazy" alt="Four teammates in suits with medals and a trophy, holding a Personal Finance Challenge State Champions 2026 sign">
+          <figcaption>Georgia Personal Finance Challenge state champions, 2026.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/econ-challenge-2025.jpg" width="1170" height="996" loading="lazy" alt="A group of students with trophies and Econ Challenge and Personal Finance Challenge state champion banners at the Federal Reserve Bank of Atlanta">
+          <figcaption>Georgia state champions at the Federal Reserve Bank of Atlanta, April 18, 2025.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="pics two">
+        <figure class="span">
+          <img src="assets/cap-awards.jpg" width="1170" height="607" loading="lazy" alt="Civil Air Patrol cadets and officers standing in front of a blue curtain, two holding plaques">
+          <figcaption>Civil Air Patrol cadets with plaques.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/cap-handshake.jpg" width="1050" height="1436" loading="lazy" alt="A Civil Air Patrol cadet shaking hands with a senior officer while another cadet looks on">
+          <figcaption>Civil Air Patrol cadets with a senior officer.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/cap-aircraft.jpg" width="1400" height="1050" loading="lazy" alt="A Civil Air Patrol cadet in uniform standing next to a Civil Air Patrol aircraft">
+          <figcaption>Civil Air Patrol cadet at an airfield.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <p class="label">Civil Air Patrol</p>
+        <h3>Georgia Wing Cadet Competition Captain</h3>
+        <p>I led my team in Cadet Competition (honor guard, color guard, and drill) to the Georgia Wing state championship and 1st place in the Southeast Region. I completed the NCO leadership track and Encampment, a weeklong summer leadership training.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="pics">
+        <figure>
+          <img src="assets/atlanta-mayor-dickens.jpg" width="1064" height="1600" loading="lazy" alt="Ishaan in a navy suit and yellow tie standing next to Atlanta Mayor Andre Dickens in a blue pinstripe suit">
+          <figcaption>With Atlanta Mayor Andre Dickens.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <p class="label">Regional planning</p>
+        <h3>Atlanta Regional Commission</h3>
+        <p>I interned at the Atlanta Regional Commission, where I worked with 50+ regional planners across 11 counties and 75 cities to test housing investments for low-income renters, and I presented at ARC Board meetings. I frame my work around how transportation, infrastructure, and development decisions shape neighborhoods and housing.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="pics two">
+        <figure>
+          <img src="assets/scouts-church.jpg" width="1280" height="960" loading="lazy" alt="Scouts in uniform and an older woman standing at the entrance of the church hosting Scout Sunday">
+          <figcaption>Scout Sunday service initiative at our host church.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/scouts-meeting.jpg" width="960" height="1280" loading="lazy" alt="A troop meeting with scouts seated at tables and a leader writing on a whiteboard">
+          <figcaption>A troop meeting.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <p class="label">Scouting</p>
+        <h3>Eagle Scout and Senior Patrol Leader</h3>
+        <p>I have been Senior Patrol Leader of my troop and of NYLT, and I staffed NYLT in 2025 and 2026. My Eagle project built storage shelves for DROP Forsyth, a nonprofit serving young adults ages 18 to 24 who are experiencing housing insecurity. I also brought back Scout Sunday, a service day with a food drive, at the church that hosts our troop. I now serve as Junior Assistant Scoutmaster.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="pics two">
+        <figure>
+          <img src="assets/youth-tour-capitol.jpg" width="1067" height="1400" loading="lazy" alt="Two students in front of the U.S. Capitol dome">
+          <figcaption>Washington, D.C.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/dc-rooftop.jpg" width="1400" height="1050" loading="lazy" alt="A group of students and adults smiling on a rooftop with the U.S. Capitol behind them">
+          <figcaption>Washington, D.C.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <p class="label">Federal government</p>
+        <h3>Washington, D.C.</h3>
+        <p>I was one of 2 delegates representing Sawnee EMC on the Washington Youth Tour, speaking for the co-op's 200K+ members with a focus on energy and economics. I also took part in Congressman Rich McCormick's Congressional Youth Advisory Council, which led to my NHS officer team meeting him in Washington.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <figure>
+        <img src="assets/financial-literacy-session.jpg" width="1400" height="1256" loading="lazy" alt="Ishaan with a large group of students in a classroom in front of a projected slide reading Activity Time">
+        <figcaption>A financial-literacy activity session with students.</figcaption>
+      </figure>
+      <div class="text">
+        <p class="label">Teaching</p>
+        <h3>Project YouthFinLit</h3>
+        <p>I helped build a financial-literacy curriculum with Forsyth County, first as a United Community Bank Junior Board of Directors member and later as a student mission representative for Project Youth Financial Literacy. I brought the resources to 4-H Connect chapters across Georgia and internationally.</p>
+        <figure class="bookfig">
+          <img src="assets/little-money-lessons.jpg" width="334" height="336" loading="lazy" alt="Cover of Little Money Lessons: Nova's Big Question and Marcus Makes a Choice">
+          <figcaption><em>Little Money Lessons: Nova&rsquo;s Big Question &amp; Marcus Makes a Choice</em>, one of our books.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="entry">
+      <figure>
+        <img src="assets/lambert-ceremony.jpg" width="1400" height="933" loading="lazy" alt="Ishaan speaking at a podium with the Lambert High School crest on a dark stage">
+        <figcaption>Speaking at a Lambert High School ceremony.</figcaption>
+      </figure>
+      <div class="text">
+        <p class="label">School leadership</p>
+        <h3>National Honor Society</h3>
+        <p>I am president of a chapter with 650+ members. I founded a Student Advisory Council that meets monthly with the presidents of 15 major clubs to coordinate service, and launched Service Accelerator to simplify partnerships between clubs. As president I also lead the Blessings in a Backpack club, which reached 600+ children and packed 70,000 bags. The national organization recognized it as its largest chapter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="articles">
+    <div class="sec-head">
+      <p class="label">Writing and press</p>
+      <h2>Articles</h2>
+      <p>Coverage of my work and competitions.</p>
+    </div>
+    <ul class="arts">
+      <li>
+        <span class="src">Sawnee EMC</span>
+        <a href="https://sawnee.coop/sawnee-electric-foundation-announces-2026-sawnee-emc-washington-youth-tour-delegates" target="_blank" rel="noopener">Sawnee Electric Foundation announces 2026 Sawnee EMC Washington Youth Tour delegates</a>
+      </li>
+      <li>
+        <span class="src">PR Newswire</span>
+        <a href="https://www.prnewswire.com/news-releases/high-school-students-in-nyc-and-the-atlanta-area-sweep-top-awards-in-council-for-economic-educations-2026-national-economics-challenge-302787065.html" target="_blank" rel="noopener">High school students in NYC and the Atlanta area sweep top awards in Council for Economic Education's 2026 National Economics Challenge</a>
+      </li>
+      <li>
+        <span class="src">YouTube</span>
+        <a href="https://www.youtube.com/watch?v=SoHjwFrQzqE" target="_blank" rel="noopener">World Economics Cup winning case study video</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="sec-head">
+      <p class="label">Contact</p>
+      <h2>Contact me</h2>
+      <p>If you work on housing, economics, or data and want to compare notes, I would like to hear from you.</p>
+    </div>
+    <ul class="contact-list">
+      <li><span class="label">Email</span><a href="mailto:ivsomaka@gmail.com">ivsomaka@gmail.com</a></li>
+      <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/ishaan-somaka" target="_blank" rel="noopener">linkedin.com/in/ishaan-somaka</a></li>
+      <li><span class="label">GitHub</span><a href="https://github.com/ishaansomaka" target="_blank" rel="noopener">github.com/ishaansomaka</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Ishaan Somaka</span>
+    <span>Last updated October 2026</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var btn = document.getElementById("menu-btn");
+  var nav = document.getElementById("nav");
+  if (!btn || !nav) return;
+  function setOpen(open) {
+    nav.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  btn.addEventListener("click", function () { setOpen(!nav.classList.contains("open")); });
+  nav.addEventListener("click", function (e) { if (e.target.tagName === "A") setOpen(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+})();
+</script>
+</body>
+</html>
