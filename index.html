@@ -2,42 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ishaan Somaka</title>
 <meta name="description" content="Ishaan Somaka is a high school student in Georgia researching housing pressure, incentives, and policy in the Atlanta region, and building tools that make the data usable.">
-<meta name="theme-color" content="#F8F6F1">
+<meta name="theme-color" content="#4B2E17">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ishaan Somaka">
 <meta property="og:description" content="Research and tools on housing pressure, incentives, and policy in the Atlanta region.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232B3F5E'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23F8F6F1'%3EIS%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%234B2E17'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23F6EBCB'%3EIS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
 <style>
-/* Concept: a quiet research notebook. One reading column, small-caps labels, notes in the margin, hairline rules, no cards. */
+/* Concept: a quiet parchment page. The Catan-style board appears once, as the map of involvements. */
 :root {
-  --bg: #F8F6F1;
-  --ink: #24272C;
-  --muted: #5C5F66;
-  --rule: #D8D3C6;
-  --navy: #2B3F5E;
-  --pine: #3E5C4B;
-  --soft: #A9B4C2;
-  --loss: #9B3A2C;
-  --ph-fill: #EFEBE1;
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --bg: #F1E5C4;
+  --surface: #FBF5E2;
+  --ink: #2C2015;
+  --muted: #5B4833;
+  --rule: #CDBA8C;
+  --wood: #7A4E2B;
+  --wood-dark: #4B2E17;
+  --bar-bg: #4B2E17;
+  --bar-ink: #F6EBCB;
+  --brick: #B5472B;
+  --sheep: #7DAF4C;
+  --wheat: #E3B13B;
+  --ore: #7E8A97;
+  --forest: #2E6A3A;
+  --sea: #2B6D93;
+  --navy: #2B6D93;
+  --pine: #2E6A3A;
+  --soft: #A6C3D4;
+  --loss: #B5472B;
+  --ph-fill: #E6D8B0;
+  --link: #1F5C80;
+  --hex: #9B7B45;
+  --hex-op: 0.04;
+  --token: #F6E8BA;
+  --res: var(--wheat);
+  --display: "Alegreya", Georgia, "Times New Roman", serif;
+  --serif: "Alegreya", Georgia, "Times New Roman", serif;
   --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14181D; --ink: #E6E3DC; --muted: #A3A8AF; --rule: #2D343C;
-    --navy: #A9BEDF; --pine: #93BBA2; --soft: #4A5A70; --loss: #E39A8A; --ph-fill: #1B2128;
+    --bg: #1C160F; --surface: #2A2118; --ink: #F3E7CC; --muted: #C2AF8D; --rule: #54442E;
+    --wood: #B58A58; --wood-dark: #0E0A06; --bar-bg: #120D08; --bar-ink: #F3E7CC;
+    --brick: #D9694C; --sheep: #8DC05A; --wheat: #E9BD4C; --ore: #97A3B0; --forest: #7FBF8C; --sea: #6FB0D6;
+    --navy: #7FB6D9; --pine: #8CC79A; --soft: #3E5A6C; --loss: #E3836B; --ph-fill: #241C13;
+    --link: #8EC3E6; --hex: #E0B66E; --hex-op: 0.035; --token: #3A2E1F;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #14181D; --ink: #E6E3DC; --muted: #A3A8AF; --rule: #2D343C;
-  --navy: #A9BEDF; --pine: #93BBA2; --soft: #4A5A70; --loss: #E39A8A; --ph-fill: #1B2128;
+  --bg: #1C160F; --surface: #2A2118; --ink: #F3E7CC; --muted: #C2AF8D; --rule: #54442E;
+  --wood: #B58A58; --wood-dark: #0E0A06; --bar-bg: #120D08; --bar-ink: #F3E7CC;
+  --brick: #D9694C; --sheep: #8DC05A; --wheat: #E9BD4C; --ore: #97A3B0; --forest: #7FBF8C; --sea: #6FB0D6;
+  --navy: #7FB6D9; --pine: #8CC79A; --soft: #3E5A6C; --loss: #E3836B; --ph-fill: #241C13;
+  --link: #8EC3E6; --hex: #E0B66E; --hex-op: 0.035; --token: #3A2E1F;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -48,146 +71,256 @@ body {
   padding-inline: 20px; padding-block: 0 40px;
   -webkit-font-smoothing: antialiased;
 }
+/* honeycomb table cloth */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--hex); opacity: var(--hex-op);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zM28 66v32M0 50L-28 66M56 50l28 16' fill='none' stroke='black' stroke-width='2'/%3E%3Cpath d='M28 98L0 82V66M28 98l28-16V66' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zM28 66v32M0 50L-28 66M56 50l28 16' fill='none' stroke='black' stroke-width='2'/%3E%3Cpath d='M28 98L0 82V66M28 98l28-16V66' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+}
 .wrap { max-width: 1060px; margin-inline: auto; }
 p { margin: 0; max-width: 62ch; }
-a { color: var(--navy); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
-a:focus-visible, button:focus-visible, video:focus-visible { outline: 2px solid var(--pine); outline-offset: 3px; }
+a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid var(--brick); outline-offset: 3px; }
 img { display: block; max-width: 100%; height: auto; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
-h4 { margin: 0; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.label { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+h1, h2 { font-family: var(--display); font-weight: 700; margin: 0; text-wrap: balance; }
+h3 { font-family: var(--serif); font-weight: 700; margin: 0; text-wrap: balance; }
+h4 { margin: 0; font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: 0.02em; color: var(--muted); }
+.label {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: 0.02em; color: var(--muted);
+}
+.label::before {
+  content: ""; flex: none; width: 15px; height: 17px; background: var(--res);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
 .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 20; }
 .skip:focus { left: 8px; }
 
-/* header */
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--rule); margin-inline: -20px; padding-inline: 20px; }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 56px; gap: 16px; }
-.brand { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); text-decoration: none; }
-.nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
-.nav a { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; padding-block: 8px; border-bottom: 1px solid transparent; }
-.nav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
-.menu-btn { display: none; font: inherit; font-size: 14px; font-weight: 500; background: none; border: 1px solid var(--rule); color: var(--ink); padding: 8px 14px; cursor: pointer; }
+/* header: a plank */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--bar-bg); color: var(--bar-ink);
+  border-bottom: 3px solid var(--wood); margin-inline: -20px; padding-inline: 20px;
+}
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 16px; }
+.brand { font-family: var(--display); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.01em; color: var(--bar-ink); text-decoration: none; }
+.nav ul { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; }
+.nav a { display: block; font-size: 15px; font-weight: 600; color: var(--bar-ink); text-decoration: none; padding: 8px 12px; border-radius: 0; opacity: 0.88; }
+.nav a:hover { opacity: 1; background: rgba(255, 255, 255, 0.12); }
+.menu-btn { display: none; font: inherit; font-size: 15px; font-weight: 600; background: none; border: 2px solid var(--bar-ink); border-radius: 0; color: var(--bar-ink); padding: 6px 14px; cursor: pointer; }
 
 /* home */
-.home { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 56px; padding-block: 88px 96px; align-items: end; }
-.home h1 { font-size: clamp(3.2rem, 9vw, 6.2rem); line-height: 0.98; letter-spacing: -0.025em; margin-block: 18px 28px; }
-.lede { font-family: var(--serif); font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.4; max-width: 30em; }
-.lede em { color: var(--navy); }
-.by { margin-top: 18px; color: var(--muted); font-size: 15px; }
+.home { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 56px; padding-block: 72px 88px; align-items: center; }
+.home h1 { font-size: clamp(2.7rem, 7.4vw, 5rem); line-height: 1.02; letter-spacing: 0.01em; margin-block: 14px 26px; color: var(--wood-dark); }
+.lede { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 1.8rem); line-height: 1.38; max-width: 30em; }
+.by { margin-top: 18px; color: var(--muted); font-size: 16px; font-weight: 500; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.btn { display: inline-block; font-size: 15px; font-weight: 500; text-decoration: none; padding: 11px 20px; border: 1px solid var(--ink); color: var(--ink); background: transparent; }
-.btn:hover { background: var(--ink); color: var(--bg); }
-.btn.fill { background: var(--navy); border-color: var(--navy); color: var(--bg); }
-.btn.fill:hover { background: var(--ink); border-color: var(--ink); }
-.contact-line { margin-top: 28px; font-size: 16px; }
-.portrait { border: 1px solid var(--rule); width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%; background: var(--ph-fill); }
+.btn {
+  display: inline-block; font-size: 15px; font-weight: 700; text-decoration: none; padding: 10px 20px;
+  border: 2px solid var(--wood); border-radius: 0; color: var(--ink); background: var(--surface);
+  box-shadow: 0 2px 0 var(--rule); transition: transform 0.08s, box-shadow 0.08s, background 0.12s;
+}
+.btn:hover { background: var(--wood); color: var(--surface); transform: translateY(1px); box-shadow: 0 2px 0 var(--wood-dark); }
+.btn:active { transform: translateY(3px); box-shadow: 0 0 0 var(--wood-dark); }
+.contact-line { margin-top: 30px; font-size: 16px; }
+.portrait-wrap { width: 100%; max-width: 380px; justify-self: center; }
+.portrait { width: 100%; height: auto; border: 2px solid var(--wood); border-radius: 0; box-shadow: 0 3px 0 rgba(75, 46, 23, 0.2); background: var(--ph-fill); }
 
-/* sections */
-.sec { border-top: 1px solid var(--rule); padding-block: 88px; scroll-margin-top: 56px; }
-.sec-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-bottom: 48px; }
-.sec h2 { font-size: clamp(2.2rem, 5vw, 3.3rem); line-height: 1.05; letter-spacing: -0.015em; }
+
+/* the board: a clickable map of involvements */
+.board-wrap { margin-bottom: 0; }
+.board { display: block; width: 100%; max-width: 480px; height: auto; margin-inline: auto; overflow: visible; }
+.board a { cursor: pointer; outline: none; }
+.board .tile { transition: transform 0.18s ease; filter: drop-shadow(0 3px 0 rgba(75, 46, 23, 0.3)); }
+.board a:hover .tile, .board a:focus-visible .tile { transform: translateY(-5px); }
+.board a:focus-visible .hexline { stroke: var(--brick); stroke-width: 4; }
+.hexfill { stroke: var(--wood-dark); stroke-width: 2; stroke-linejoin: round; }
+.hexline { fill: none; stroke: rgba(255, 255, 255, 0.35); stroke-width: 1.5; stroke-linejoin: round; }
+.t-wheat { fill: var(--wheat); } .t-ore { fill: var(--ore); } .t-brick { fill: var(--brick); }
+.t-wood { fill: var(--forest); } .t-sheep { fill: var(--sheep); } .t-sea { fill: var(--sea); } .t-desert { fill: #E0CB96; }
+.plaque { fill: var(--token); stroke: var(--wood); stroke-width: 1.5; }
+.pl-name { font-family: var(--sans); font-size: 13.5px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+.pl-sub { font-family: var(--sans); font-size: 10px; font-weight: 500; fill: var(--muted); text-anchor: middle; }
+.road-edge { stroke: var(--wood-dark); stroke-width: 10; stroke-linecap: round; fill: none; }
+.road-fill { stroke-width: 6; stroke-linecap: round; fill: none; }
+.board .anim .road-edge, .board .anim .road-fill { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.board .anim.go .road-edge, .board .anim.go .road-fill { animation: lay 0.7s ease-out forwards; animation-delay: calc(var(--i) * 0.14s); }
+@keyframes lay { to { stroke-dashoffset: 0; } }
+.house { stroke: var(--wood-dark); stroke-width: 1.5; stroke-linejoin: round; }
+@media (prefers-reduced-motion: reduce) { .board .tile { transition: none; } }
+
+/* number tokens: the round chips from the board, used for key numbers */
+.tokens { list-style: none; margin: 56px auto 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px 16px; max-width: 820px; }
+.tokens li { min-width: 0; }
+.tokens a { display: grid; justify-items: center; gap: 12px; text-decoration: none; color: var(--ink); text-align: center; }
+.token {
+  width: min(92px, 100%); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+  background: var(--token); border: 2px solid var(--wood);
+  box-shadow: inset 0 0 0 4px var(--token), inset 0 0 0 5px var(--rule), 0 3px 0 rgba(75, 46, 23, 0.25);
+  font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: 0.01em; color: var(--wood-dark);
+  font-variant-numeric: lining-nums; transition: transform 0.15s ease;
+}
+.token.hot { color: var(--brick); }
+.tokens a:hover .token, .tokens a:focus-visible .token { transform: translateY(-3px); }
+.tokens .cap { font-size: 14px; line-height: 1.35; color: var(--muted); max-width: 16ch; }
+@media (max-width: 720px) { .tokens { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .token { transition: none; } }
+
+/* sections: each has a resource color, a road above it, and a number token */
+.sec { position: relative; padding-block: 92px 80px; scroll-margin-top: 64px; }
+.sec::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 0; opacity: 0.55;
+  background: var(--res);
+}
+#about { --res: var(--wheat); }
+#research { --res: var(--ore); }
+#toolkit { --res: var(--brick); }
+#field { --res: var(--forest); }
+#details { --res: var(--forest); }
+#articles { --res: var(--sheep); }
+#contact { --res: var(--sea); }
+.home { --res: var(--brick); }
+.sec-head { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-bottom: 44px; }
+.sec h2 { font-size: clamp(1.8rem, 4.2vw, 2.7rem); line-height: 1.12; letter-spacing: 0.01em; color: var(--wood-dark); }
 .sec-head p { color: var(--muted); }
-.cols { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 64px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 56px; }
 .cols > * { min-width: 0; }
 .stack { display: flex; flex-direction: column; gap: 24px; }
 .stack.wide { gap: 40px; }
-.note { font-size: 15px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; align-self: start; }
+.note {
+  font-size: 15px; color: var(--muted); align-self: start;
+  background: var(--surface); border: 1px solid var(--rule); border-top: 6px solid var(--res); border-radius: 0; padding: 16px 18px 20px;
+  box-shadow: 0 2px 0 rgba(75, 46, 23, 0.16);
+}
 .note dl { margin: 0; display: grid; gap: 14px; }
-.note dt { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.note dt { font-size: 14px; font-weight: 700; letter-spacing: 0.02em; }
 .note dd { margin: 2px 0 0; color: var(--ink); }
-.callout { border-left: 3px solid var(--pine); padding-left: 14px; font-size: 16px; color: var(--muted); max-width: 62ch; }
-.qs { list-style: none; margin: 0; padding: 0; display: grid; max-width: 62ch; }
-.qs li { font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; padding-block: 14px; border-top: 1px solid var(--rule); }
-.qs li:last-child { border-bottom: 1px solid var(--rule); }
+.callout {
+  border-left: 6px solid var(--res); background: var(--surface); border-radius: 0;
+  padding: 14px 18px; font-size: 16px; color: var(--ink); max-width: 62ch;
+  box-shadow: 0 3px 0 rgba(75, 46, 23, 0.16);
+}
+.qs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 62ch; }
+.qs li {
+  position: relative; font-family: var(--serif); font-weight: 500; font-size: 1.3rem; line-height: 1.35;
+  padding: 14px 18px 14px 56px; background: var(--surface); border: 2px solid var(--rule); border-radius: 0;
+}
+.qs li::before {
+  content: ""; position: absolute; left: 18px; top: 50%; width: 24px; height: 27px; margin-top: -14px; background: var(--res);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.qs li:nth-child(2)::before { background: var(--sheep); }
+.qs li:nth-child(3)::before { background: var(--brick); }
+.qs li:nth-child(4)::before { background: var(--ore); }
 
 /* research */
-.status { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pine); }
-.project h3 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); line-height: 1.15; max-width: 22em; }
+.status { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 0.02em; color: var(--pine); }
+.project h3 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); line-height: 1.15; max-width: 22em; color: var(--ink); }
 .blk { display: grid; gap: 10px; }
-.finds { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-width: 62ch; }
-.finds li { padding-block: 14px; border-top: 1px solid var(--rule); }
-.finds li:last-child { border-bottom: 1px solid var(--rule); }
-.finds strong { font-weight: 600; }
+.finds { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 62ch; }
+.finds li { padding: 14px 18px; background: var(--surface); border: 2px solid var(--rule); border-left: 6px solid var(--res); border-radius: 0; }
+.finds strong { font-weight: 700; }
 .src { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
-.recs { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; max-width: 62ch; }
+.recs { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; max-width: 62ch; }
+.recs li::marker { font-family: var(--display); font-weight: 800; color: var(--brick); }
 figure { margin: 0; }
 figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; max-width: 56ch; }
-.chart svg { display: block; width: 100%; max-width: 520px; height: auto; }
+.chart svg { display: block; width: 100%; max-width: 520px; height: auto; background: var(--surface); border: 2px solid var(--rule); border-radius: 0; padding: 12px; }
 .c-text { font-family: var(--sans); font-size: 12px; fill: var(--ink); }
 .c-muted { font-family: var(--sans); font-size: 11px; fill: var(--muted); }
 .c-axis { stroke: var(--muted); stroke-width: 1; }
 .scroll-x { overflow-x: auto; max-width: 100%; }
 table { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 15px; }
 th, td { text-align: left; padding: 8px 12px 8px 0; border-top: 1px solid var(--rule); vertical-align: top; }
-th { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border-top: 0; border-bottom: 1px solid var(--ink); }
+th { font-size: 14px; font-weight: 700; color: var(--muted); border-top: 0; border-bottom: 2px solid var(--ink); }
 
 /* toolkit */
-.tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .tool-grid > * { min-width: 0; }
+.tool-grid .blk { background: var(--surface); border: 1px solid var(--rule); border-top: 6px solid var(--res); border-radius: 0; padding: 16px 20px 20px; box-shadow: 0 2px 0 rgba(75, 46, 23, 0.16); align-content: start; }
+.tool-grid .blk:nth-child(2) { border-top-color: var(--wheat); }
+.tool-grid .blk:nth-child(3) { border-top-color: var(--sea); }
+.tool-grid .blk:nth-child(4) { border-top-color: var(--sheep); }
 .plain { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; max-width: 62ch; }
+.guide a { display: block; }
 .guide { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 760px; }
-.guide img { border: 1px solid var(--rule); width: 100%; }
+
+/* photos: tiles with a wooden edge */
+.guide img, .pics img, .book img, .bookfig img, video {
+  border: 2px solid var(--wood); border-radius: 0; box-shadow: 0 3px 0 rgba(75, 46, 23, 0.2); background: var(--ph-fill);
+}
+.guide img, .pics img, .bookfig img { width: 100%; }
+.bookfig img { max-width: 200px; }
 
 /* articles */
-.arts { list-style: none; margin: 0; padding: 0; display: grid; max-width: 70ch; }
-.arts li { padding-block: 18px; border-top: 1px solid var(--rule); display: grid; gap: 4px; }
-.arts li:last-child { border-bottom: 1px solid var(--rule); }
-.arts .src { margin-top: 0; }
-.arts a { font-family: var(--serif); font-size: 1.25rem; line-height: 1.3; }
-.bookfig img { max-width: 200px; width: 100%; border: 1px solid var(--rule); }
+.arts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 70ch; }
+.arts li { padding: 16px 20px; background: var(--surface); border: 2px solid var(--rule); border-left: 6px solid var(--res); border-radius: 0; display: grid; gap: 4px; }
+.arts .src { margin-top: 0; font-weight: 600; }
+.arts a { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; line-height: 1.3; }
 .book { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 48px; }
-.book img { width: 100%; border: 1px solid var(--rule); }
+.book img { width: 100%; }
 .book .text { display: grid; gap: 10px; max-width: 56ch; }
 @media (max-width: 600px) { .book { grid-template-columns: minmax(0, 1fr); } .book img { max-width: 200px; } }
 
-/* in the field */
-.entry { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; padding-block: 48px; border-top: 1px solid var(--rule); align-items: start; }
-.entry:first-of-type { border-top: 0; padding-top: 0; }
+/* involvements: one tile per entry */
+.entry {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 36px; align-items: start;
+  padding: 30px; margin-bottom: 36px; --res: var(--wheat);
+  background: var(--surface); border: 1px solid var(--rule); border-top: 6px solid var(--res); border-radius: 0;
+  box-shadow: 0 2px 0 rgba(75, 46, 23, 0.16);
+}
+.entry:last-child { margin-bottom: 0; }
+#inv-nec { --res: var(--wheat); } #inv-cap { --res: var(--ore); } #inv-arc { --res: var(--brick); } #inv-scouts { --res: var(--forest); }
+#inv-dc { --res: var(--sea); } #inv-pyfl { --res: var(--sheep); } #inv-nhs { --res: var(--brick); }
+.entry { scroll-margin-top: 84px; }
 .entry > * { min-width: 0; }
 .entry h3 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; margin-block: 8px 14px; }
 .entry .text { display: flex; flex-direction: column; gap: 14px; }
 .entry .text p { font-size: 16px; }
 .pics { display: grid; gap: 20px; }
 .pics.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.pics img { width: 100%; border: 1px solid var(--rule); background: var(--ph-fill); }
 .entry.wide { grid-template-columns: minmax(0, 1fr); }
 .entry.wide .text { max-width: 62ch; }
-video { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 832 / 384; background: #000; border: 1px solid var(--rule); }
+video { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 832 / 384; background: #000; }
 .pics.three { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.pics.even img { aspect-ratio: 4 / 3; object-fit: cover; }
+.pics.pair { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
+.pics.pair .cover img { max-width: 334px; }
 .pics.two { align-items: start; }
 .pics .span { grid-column: 1 / -1; }
 
 /* contact */
-.contact-list { list-style: none; margin: 0; padding: 0; display: grid; max-width: 560px; }
-.contact-list li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--rule); overflow-wrap: anywhere; }
-.contact-list li:last-child { border-bottom: 1px solid var(--rule); }
-footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; max-width: 560px; }
+.contact-list li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 14px 20px; background: var(--surface); border: 2px solid var(--rule); border-left: 6px solid var(--res); border-radius: 0; overflow-wrap: anywhere; }
+.contact-list .label::before { display: none; }
+footer { position: relative; padding-top: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 0; background: var(--rule); }
 
 @media (max-width: 900px) {
-  .home { grid-template-columns: minmax(0, 1fr); padding-block: 56px 64px; gap: 40px; }
-  .portrait { max-width: 380px; order: -1; }
+  .home { grid-template-columns: minmax(0, 1fr); padding-block: 48px 64px; gap: 36px; }
+  .portrait-wrap { max-width: 320px; order: -1; justify-self: start; }
   .cols { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .cols .note { order: -1; }
-  .sec { padding-block: 64px; }
+  .sec { padding-block: 72px 56px; }
   .tool-grid { grid-template-columns: minmax(0, 1fr); }
-  .entry { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 36px; }
+  .entry { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 22px; }
 }
 @media (max-width: 720px) {
   .menu-btn { display: block; }
-  .nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 8px 20px 16px; display: none; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--bar-bg); border-bottom: 4px solid var(--wood); padding: 8px 20px 16px; display: none; }
   .nav.open { display: block; }
   .nav ul { flex-direction: column; gap: 0; }
-  .nav a { display: block; padding-block: 12px; border-bottom: 1px solid var(--rule); }
+  .nav a { padding-block: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.15); border-radius: 0; }
   .contact-list li { grid-template-columns: 1fr; gap: 2px; }
-}
-@media (max-width: 720px) {
+  .sec-head { padding-right: 70px; }
   .pics.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
-  .guide, .pics.two, .pics.three { grid-template-columns: minmax(0, 1fr); }
+  .guide, .pics.two, .pics.three, .pics.pair { grid-template-columns: minmax(0, 1fr); }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
 </style>
 </head>
 <body>
@@ -214,7 +347,6 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
 
   <section class="home" id="top" aria-label="Introduction">
     <div>
-      <p class="label">Economics, data, and policy</p>
       <h1>Ishaan Somaka</h1>
       <p class="lede">Hello, I'm a student at Lambert High School interested in economics, urban development, housing policy, and data analysis.</p>
       <p class="by">National Economics Challenge Champion &middot; Eagle Scout &middot; Housing Advocate</p>
@@ -226,7 +358,46 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
       </div>
       <p class="contact-line">Contact me at <a href="mailto:ivsomaka@gmail.com">ivsomaka@gmail.com</a> or on <a href="https://www.linkedin.com/in/ishaan-somaka" target="_blank" rel="noopener">LinkedIn</a>.</p>
     </div>
-    <img class="portrait" src="assets/arc-presentation.jpg" width="1057" height="1400" alt="Ishaan Somaka speaking at a wooden podium marked with the ARC logo, wearing a navy suit and yellow tie">
+    <div class="portrait-wrap"><img class="portrait" src="assets/arc-presentation.jpg" width="1057" height="1400" alt="Ishaan Somaka speaking at a wooden podium marked with the ARC logo, wearing a navy suit and yellow tie"></div>
+  </section>
+
+  <section class="sec" id="field" aria-label="Involvements">
+    <div class="sec-head">
+      <h2>Involvements</h2>
+      <p>Select a tile to jump to that involvement.</p>
+    </div>
+
+    <div class="board-wrap">
+      <svg class="board" id="board" viewBox="-180 -178 360 356" role="group" aria-label="Map of my involvements. Each tile links to its details.">
+      <a href="#inv-nec" aria-label="Economics: United States National Economics Team"><g class="tile"><polygon class="hexfill t-wheat" points="0.0,-63.5 55.0,-31.7 55.0,31.7 0.0,63.5 -55.0,31.7 -55.0,-31.8"/><polygon class="hexline" points="0.0,-56.5 48.9,-28.2 48.9,28.2 0.0,56.5 -48.9,28.2 -48.9,-28.3"/><rect class="plaque" x="-49.0" y="-21.0" width="98" height="42" rx="0"/><text class="pl-name" x="0.0" y="-3.0">Economics</text><text class="pl-sub" x="0.0" y="12.0">National team</text></g></a>
+      <a href="#inv-cap" aria-label="Civil Air Patrol: Georgia Wing Cadet Competition Captain"><g class="tile"><polygon class="hexfill t-ore" points="-57.2,-162.5 -2.2,-130.8 -2.2,-67.2 -57.2,-35.5 -112.2,-67.2 -112.2,-130.8"/><polygon class="hexline" points="-57.2,-155.5 -8.2,-127.2 -8.2,-70.8 -57.2,-42.5 -106.1,-70.8 -106.1,-127.2"/><rect class="plaque" x="-106.2" y="-120.0" width="98" height="42" rx="0"/><text class="pl-name" x="-57.2" y="-102.0">CAP</text><text class="pl-sub" x="-57.2" y="-87.0">Civil Air Patrol</text></g></a>
+      <a href="#inv-arc" aria-label="Atlanta Regional Commission: regional planning"><g class="tile"><polygon class="hexfill t-brick" points="57.2,-162.5 112.2,-130.8 112.2,-67.2 57.2,-35.5 2.2,-67.2 2.2,-130.8"/><polygon class="hexline" points="57.2,-155.5 106.1,-127.2 106.1,-70.8 57.2,-42.5 8.2,-70.8 8.2,-127.2"/><rect class="plaque" x="8.2" y="-120.0" width="98" height="42" rx="0"/><text class="pl-name" x="57.2" y="-102.0">ARC</text><text class="pl-sub" x="57.2" y="-87.0">Regional planning</text></g></a>
+      <a href="#inv-scouts" aria-label="Scouting: Eagle Scout and Senior Patrol Leader"><g class="tile"><polygon class="hexfill t-wood" points="114.3,-63.5 169.3,-31.7 169.3,31.7 114.3,63.5 59.3,31.7 59.3,-31.8"/><polygon class="hexline" points="114.3,-56.5 163.2,-28.2 163.2,28.2 114.3,56.5 65.4,28.2 65.4,-28.3"/><rect class="plaque" x="65.3" y="-21.0" width="98" height="42" rx="0"/><text class="pl-name" x="114.3" y="-3.0">Scouting</text><text class="pl-sub" x="114.3" y="12.0">Eagle Scout</text></g></a>
+      <a href="#inv-dc" aria-label="Civic Engagement: Washington Youth Tour and Congressional Youth Advisory Council"><g class="tile"><polygon class="hexfill t-sea" points="57.2,35.5 112.2,67.2 112.2,130.8 57.2,162.5 2.2,130.8 2.2,67.2"/><polygon class="hexline" points="57.2,42.5 106.1,70.8 106.1,127.2 57.2,155.5 8.2,127.2 8.2,70.8"/><rect class="plaque" x="8.2" y="78.0" width="98" height="42" rx="0"/><text class="pl-name" x="57.2" y="96.0">Civic</text><text class="pl-sub" x="57.2" y="111.0">Engagement</text></g></a>
+      <a href="#inv-pyfl" aria-label="Project YouthFinLit: teaching financial literacy"><g class="tile"><polygon class="hexfill t-sheep" points="-57.2,35.5 -2.2,67.2 -2.2,130.8 -57.2,162.5 -112.2,130.8 -112.2,67.2"/><polygon class="hexline" points="-57.2,42.5 -8.2,70.8 -8.2,127.2 -57.2,155.5 -106.1,127.2 -106.1,70.8"/><rect class="plaque" x="-106.2" y="78.0" width="98" height="42" rx="0"/><text class="pl-name" x="-57.2" y="96.0">YouthFinLit</text><text class="pl-sub" x="-57.2" y="111.0">Teaching</text></g></a>
+      <a href="#inv-nhs" aria-label="National Honor Society: school leadership"><g class="tile"><polygon class="hexfill t-brick" points="-114.3,-63.5 -59.3,-31.7 -59.3,31.7 -114.3,63.5 -169.3,31.7 -169.3,-31.8"/><polygon class="hexline" points="-114.3,-56.5 -65.4,-28.2 -65.4,28.2 -114.3,56.5 -163.2,28.2 -163.2,-28.3"/><rect class="plaque" x="-163.3" y="-21.0" width="98" height="42" rx="0"/><text class="pl-name" x="-114.3" y="-3.0">NHS</text><text class="pl-sub" x="-114.3" y="12.0">Honor Society</text></g></a>
+      <g class="roads" aria-hidden="true">
+      <g style="--i:0"><line class="road-edge" pathLength="1" x1="0.0" y1="-75.0" x2="0.0" y2="-123.0"/><line class="road-fill" pathLength="1" stroke="var(--brick)" x1="0.0" y1="-75.0" x2="0.0" y2="-123.0"/></g>
+      <g style="--i:1"><line class="road-edge" pathLength="1" x1="65.0" y1="-37.5" x2="106.5" y2="-61.5"/><line class="road-fill" pathLength="1" stroke="var(--sea)" x1="65.0" y1="-37.5" x2="106.5" y2="-61.5"/></g>
+      <g style="--i:2"><line class="road-edge" pathLength="1" x1="65.0" y1="37.5" x2="106.5" y2="61.5"/><line class="road-fill" pathLength="1" stroke="var(--brick)" x1="65.0" y1="37.5" x2="106.5" y2="61.5"/></g>
+      <g style="--i:3"><line class="road-edge" pathLength="1" x1="0.0" y1="75.0" x2="0.0" y2="123.0"/><line class="road-fill" pathLength="1" stroke="var(--sea)" x1="0.0" y1="75.0" x2="0.0" y2="123.0"/></g>
+      <g style="--i:4"><line class="road-edge" pathLength="1" x1="-65.0" y1="37.5" x2="-106.5" y2="61.5"/><line class="road-fill" pathLength="1" stroke="var(--brick)" x1="-65.0" y1="37.5" x2="-106.5" y2="61.5"/></g>
+      <g style="--i:5"><line class="road-edge" pathLength="1" x1="-65.0" y1="-37.5" x2="-106.5" y2="-61.5"/><line class="road-fill" pathLength="1" stroke="var(--sea)" x1="-65.0" y1="-37.5" x2="-106.5" y2="-61.5"/></g>
+      <path class="house" fill="var(--brick)" transform="translate(0.0 -66.0)" d="M0,-10 L9,-2 L9,8 L-9,8 L-9,-2 Z"/>
+      <path class="house" fill="var(--sea)" transform="translate(57.2 -33.0)" d="M0,-10 L9,-2 L9,8 L-9,8 L-9,-2 Z"/>
+      <path class="house" fill="var(--brick)" transform="translate(57.2 33.0)" d="M0,-10 L9,-2 L9,8 L-9,8 L-9,-2 Z"/>
+      <path class="house" fill="var(--sea)" transform="translate(0.0 66.0)" d="M0,-10 L9,-2 L9,8 L-9,8 L-9,-2 Z"/>
+      <path class="house" fill="var(--brick)" transform="translate(-57.2 33.0)" d="M0,-10 L9,-2 L9,8 L-9,8 L-9,-2 Z"/>
+      <path class="house" fill="var(--sea)" transform="translate(-57.2 -33.0)" d="M0,-10 L9,-2 L9,8 L-9,8 L-9,-2 Z"/>
+      </g></svg>
+    </div>
+    <ul class="tokens" aria-label="Involvements by the numbers">
+      <li><a href="#inv-nec"><span class="token hot">10,000+</span><span class="cap">competitors in the National Economics Challenge</span></a></li>
+      <li><a href="#inv-pyfl"><span class="token">3,500+</span><span class="cap">youth reached by Project YouthFinLit</span></a></li>
+      <li><a href="#inv-nhs"><span class="token">650+</span><span class="cap">members in my NHS chapter</span></a></li>
+      <li><a href="#inv-nhs"><span class="token hot">70,000</span><span class="cap">bags packed for Blessings in a Backpack</span></a></li>
+      <li><a href="#inv-arc"><span class="token">50+</span><span class="cap">regional planners I worked with at ARC</span></a></li>
+    </ul>
   </section>
 
   <section class="sec" id="about">
@@ -334,7 +505,13 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
 
         <div class="blk">
           <h4>Materials</h4>
-          <p><a href="assets/Reclaiming-Urban-Belonging.pdf" target="_blank" rel="noopener">Reclaiming Urban Belonging: Policy Interventions to Reverse Gentrification in Atlanta</a> (PDF, 21 pages)</p>
+          <figure>
+            <div class="guide">
+              <a href="assets/Reclaiming-Urban-Belonging.pdf" target="_blank" rel="noopener"><img src="assets/paper-page-1.jpg" width="765" height="990" loading="lazy" alt="Title page of the research paper Reclaiming Urban Belonging, with the author note"></a>
+              <a href="assets/Reclaiming-Urban-Belonging.pdf" target="_blank" rel="noopener"><img src="assets/paper-page-2.jpg" width="765" height="990" loading="lazy" alt="Second page of the research paper, showing the abstract and keywords"></a>
+            </div>
+            <figcaption>Pages 1 and 2 of the paper. <a href="assets/Reclaiming-Urban-Belonging.pdf" target="_blank" rel="noopener">Reclaiming Urban Belonging: Policy Interventions to Reverse Gentrification in Atlanta</a> (PDF, 21 pages)</figcaption>
+          </figure>
         </div>
       </div>
       <aside class="note" aria-label="Project details">
@@ -402,14 +579,14 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
     </div>
   </section>
 
-  <section class="sec" id="field">
+  <section class="sec" id="details">
     <div class="sec-head">
-      <p class="label">More about me</p>
-      <h2>Involvements</h2>
+      <h2>Details</h2>
       <p>Competitions, public service, and leadership.</p>
     </div>
 
-    <div class="entry wide">
+
+    <div class="entry wide" id="inv-nec">
       <div class="text">
         <p class="label">Economics competition</p>
         <h3>United States National Economics Team</h3>
@@ -444,14 +621,21 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
       </div>
     </div>
 
-    <div class="entry">
-      <div class="pics two">
-        <figure class="span">
+    <div class="entry wide" id="inv-cap">
+      <div class="text">
+        <p class="label">Civil Air Patrol</p>
+        <h3>Georgia Wing Cadet Competition Captain</h3>
+        <p>I led my team in Cadet Competition (honor guard, color guard, and drill) to the Georgia Wing state championship and 1st place in the Southeast Region. I completed the NCO leadership track and Encampment, a weeklong summer leadership training.</p>
+      </div>
+      <div class="pics">
+        <figure>
           <img src="assets/cap-awards.jpg" width="1170" height="607" loading="lazy" alt="Civil Air Patrol cadets and officers standing in front of a blue curtain, two holding plaques">
           <figcaption>Southeast Region Cadet Competition win.</figcaption>
         </figure>
+      </div>
+      <div class="pics two even">
         <figure>
-          <img src="assets/cap-handshake.jpg" width="1050" height="1436" loading="lazy" alt="A Civil Air Patrol cadet receiving a challenge coin in a handshake from Col. Michael Wills while another cadet looks on">
+          <img src="assets/cap-handshake.jpg" width="1050" height="1436" loading="lazy" style="object-position: 50% 35%" alt="A Civil Air Patrol cadet receiving a challenge coin in a handshake from Col. Michael Wills while another cadet looks on">
           <figcaption>Receiving a challenge coin from Col. Michael Wills.</figcaption>
         </figure>
         <figure>
@@ -459,14 +643,9 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
           <figcaption>Georgia Wing Encampment, staff flight training.</figcaption>
         </figure>
       </div>
-      <div class="text">
-        <p class="label">Civil Air Patrol</p>
-        <h3>Georgia Wing Cadet Competition Captain</h3>
-        <p>I led my team in Cadet Competition (honor guard, color guard, and drill) to the Georgia Wing state championship and 1st place in the Southeast Region. I completed the NCO leadership track and Encampment, a weeklong summer leadership training.</p>
-      </div>
     </div>
 
-    <div class="entry">
+    <div class="entry" id="inv-arc">
       <div class="pics">
         <figure>
           <img src="assets/atlanta-mayor-dickens.jpg" width="1064" height="1600" loading="lazy" alt="Ishaan in a navy suit and yellow tie standing next to Atlanta Mayor Andre Dickens in a blue pinstripe suit">
@@ -480,7 +659,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
       </div>
     </div>
 
-    <div class="entry">
+    <div class="entry" id="inv-scouts">
       <div class="pics two">
         <figure>
           <img src="assets/scouts-church.jpg" width="1280" height="960" loading="lazy" alt="Scouts in uniform and an older woman standing at the entrance of the church hosting Scout Sunday">
@@ -498,7 +677,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
       </div>
     </div>
 
-    <div class="entry">
+    <div class="entry" id="inv-dc">
       <div class="pics two">
         <figure>
           <img src="assets/youth-tour-capitol.jpg" width="1067" height="1400" loading="lazy" alt="Two students in front of the U.S. Capitol dome">
@@ -510,29 +689,31 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
         </figure>
       </div>
       <div class="text">
-        <p class="label">Federal government</p>
-        <h3>Washington, D.C.</h3>
+        <p class="label">Public service</p>
+        <h3>Civic Engagement</h3>
         <p>I was one of 2 delegates representing Sawnee EMC on the Washington Youth Tour, speaking for the co-op's 200K+ members with a focus on energy and economics. I also took part in Congressman Rich McCormick's Congressional Youth Advisory Council, which led to my NHS officer team meeting him in Washington.</p>
       </div>
     </div>
 
-    <div class="entry">
-      <figure>
-        <img src="assets/financial-literacy-session.jpg" width="1400" height="1256" loading="lazy" alt="Ishaan with a large group of students in a classroom in front of a projected slide reading Activity Time">
-        <figcaption>Project YouthFinLit workshop.</figcaption>
-      </figure>
+    <div class="entry wide" id="inv-pyfl">
       <div class="text">
         <p class="label">Teaching</p>
         <h3>Project YouthFinLit</h3>
         <p>I co-lead a team of 5 at Project YouthFinLit, which has reached 3,500+ youth across 15 countries. We built a global financial-literacy curriculum and a volunteer platform that has sparked 100+ workshops. I helped develop the curriculum with Forsyth County, first as a United Community Bank Junior Board of Directors member and later as a student mission representative, and I brought the resources to 4-H Connect chapters across Georgia and internationally.</p>
-        <figure class="bookfig">
+      </div>
+      <div class="pics pair">
+        <figure>
+          <img src="assets/financial-literacy-session.jpg" width="1400" height="1256" loading="lazy" alt="Ishaan with a large group of students in a classroom in front of a projected slide reading Activity Time">
+          <figcaption>Project YouthFinLit workshop.</figcaption>
+        </figure>
+        <figure class="cover">
           <img src="assets/little-money-lessons.jpg" width="334" height="336" loading="lazy" alt="Cover of Little Money Lessons: Nova's Big Question and Marcus Makes a Choice">
           <figcaption><em>Little Money Lessons: Nova&rsquo;s Big Question &amp; Marcus Makes a Choice</em>, one of our books from the Project YouthFinLit financial-literacy series.</figcaption>
         </figure>
       </div>
     </div>
 
-    <div class="entry">
+    <div class="entry" id="inv-nhs">
       <figure>
         <img src="assets/lambert-ceremony.jpg" width="1400" height="933" loading="lazy" alt="Ishaan speaking at a podium with the Lambert High School crest on a dark stage">
         <figcaption>Speaking as president at the Lambert High School induction ceremony.</figcaption>
@@ -595,6 +776,18 @@ footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; fl
   btn.addEventListener("click", function () { setOpen(!nav.classList.contains("open")); });
   nav.addEventListener("click", function (e) { if (e.target.tagName === "A") setOpen(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+})();
+
+(function () {
+  var board = document.getElementById("board");
+  if (!board || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var roads = board.querySelector(".roads");
+  roads.classList.add("anim");
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { roads.classList.add("go"); io.disconnect(); } });
+  }, { threshold: 0.4 });
+  io.observe(board);
 })();
 </script>
 </body>
